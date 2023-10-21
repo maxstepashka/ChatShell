@@ -11,7 +11,9 @@ except:
 
 customtkinter.set_appearance_mode("light")
 customtkinter.set_default_color_theme("green")
-
+colorback = "#F2F2F2"
+color1 = "#2CC985"
+color2 = "#0C955A"
 app = customtkinter.CTk()
 app.geometry("330x110")
 app.title('ChatShell')
@@ -29,6 +31,12 @@ def send():
     message_viev.set("Вы: " + message_entry.get().lower())
     com = message_entry.get().lower()
     message_entry.delete(0, 'end')
+    # Встроеные приложения
+    if "текстов" in com.lower() and "редакт" in com.lower() or "блокнот" in com.lower():
+        os.startfile("ChatShell_notepad.pyw")
+
+    if "калькул" in com.lower():
+        os.startfile("ChatShell_calculator.pyw")
     # Сайты
     if "яндекс" in com.lower() and "музык" in com.lower():
         webbrowser.open("https://music.yandex.ru/home")
@@ -136,7 +144,7 @@ label_user.place(relx=0.5, rely=0.25, anchor=customtkinter.CENTER)
 label_bot = customtkinter.CTkLabel(master=app, textvariable=message_bot_viev, font=('TkHeadingFont', 16))
 label_bot.place(relx=0.5, rely=0.5, anchor=customtkinter.CENTER)
 
-message_entry = customtkinter.CTkEntry(master=app, width=195, placeholder_text='Введите сообщение:')
+message_entry = customtkinter.CTkEntry(master=app, width=195, placeholder_text='Введите сообщение:', border_color=color1)
 message_entry.place(relx=0.05, rely=0.83, anchor=customtkinter.W)
 
 button_send = customtkinter.CTkButton(master=app, width=80, text='Отправить', command=send)
