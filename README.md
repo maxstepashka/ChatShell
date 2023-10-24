@@ -1,5 +1,6 @@
 # ChatShell - графическая оболочка, основаная на механике чатов.
 ![screenshot](https://github.com/maxstepashka/ChatShell/blob/a7371c6213d8d44eb29ebfaad27cd96dd295be6d/ChatShell_logo.png)
+Логотип ChatShell.
 # Установка
 Поддерживаются только 64-разрядные ОС Windows 10-11 (Поддержка Windows 11 экспериментальная и не очень стабильная). Поддерживается только python 3.11.4, другие версии работать не будут.
 
