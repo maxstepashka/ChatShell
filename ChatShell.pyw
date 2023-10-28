@@ -15,7 +15,7 @@ colorback = "#F2F2F2"
 color1 = "#2CC985"
 color2 = "#0C955A"
 app = customtkinter.CTk()
-app.geometry("330x110")
+app.geometry("310x40")
 app.title('ChatShell')
 app.attributes("-topmost", True)
 app.attributes("-toolwindow", True)
@@ -23,12 +23,7 @@ app.attributes("-toolwindow", True)
 app.resizable(width = False, height = False)
 app.winfo_x = 0
 
-message_viev = customtkinter.StringVar()
-message_viev.set("Вы: ")
-message_bot_viev = customtkinter.StringVar()
-message_bot_viev.set("Бот: ")
 def send():
-    message_viev.set("Вы: " + message_entry.get().lower())
     com = message_entry.get().lower()
     message_entry.delete(0, 'end')
     # Встроеные приложения
@@ -121,13 +116,6 @@ def send():
 
     elif com == "exit":
         quit()
-    bot_message = random.randint(1, 3)
-    if bot_message == 1:
-        message_bot_viev.set("Бот: запрос выполнен")
-    if bot_message == 2:
-        message_bot_viev.set("Бот: сделано")
-    if bot_message == 3:
-        message_bot_viev.set("Бот: всегда к вашим услугам")
 
 def wait_for_enter():
     while True:
@@ -138,16 +126,11 @@ enter_th = threading.Thread(target=wait_for_enter, daemon=True)
 enter_th.start()
 
 
-label_user = customtkinter.CTkLabel(master=app, textvariable=message_viev, font=('TkHeadingFont', 16))
-label_user.place(relx=0.5, rely=0.25, anchor=customtkinter.CENTER)
-
-label_bot = customtkinter.CTkLabel(master=app, textvariable=message_bot_viev, font=('TkHeadingFont', 16))
-label_bot.place(relx=0.5, rely=0.5, anchor=customtkinter.CENTER)
 
 message_entry = customtkinter.CTkEntry(master=app, width=195, placeholder_text='Введите сообщение:', border_color=color1)
-message_entry.place(relx=0.05, rely=0.83, anchor=customtkinter.W)
+message_entry.place(relx=0.05, rely=0.5, anchor=customtkinter.W)
 
 button_send = customtkinter.CTkButton(master=app, width=80, text='Отправить', command=send)
-button_send.place(relx=0.95, rely=0.83, anchor=customtkinter.E)
+button_send.place(relx=0.95, rely=0.5, anchor=customtkinter.E)
 
 app.mainloop()
