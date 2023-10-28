@@ -142,7 +142,7 @@ button_6.place(relx=0.6, rely=0.41, anchor=customtkinter.CENTER)
 button_minus = customtkinter.CTkButton(master=app, text="-", fg_color=color1, hover_color=color2, font=("TkHeadingFont", 18), width=40, height=40, command=minus)
 button_minus.place(relx=0.8, rely=0.41, anchor=customtkinter.CENTER)
 
-button_1 = customtkinter.CTkButton(master=app, text="3", fg_color=color1, hover_color=color2, font=("TkHeadingFont", 18), width=40, height=40, command=one)
+button_1 = customtkinter.CTkButton(master=app, text="1", fg_color=color1, hover_color=color2, font=("TkHeadingFont", 18), width=40, height=40, command=one)
 button_1.place(relx=0.2, rely=0.57, anchor=customtkinter.CENTER)
 
 button_2 = customtkinter.CTkButton(master=app, text="2", fg_color=color1, hover_color=color2, font=("TkHeadingFont", 18), width=40, height=40, command=two)
