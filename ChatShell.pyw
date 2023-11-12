@@ -3,8 +3,8 @@ import random
 import webbrowser
 import threading
 try:
-    import keyboard
     import customtkinter
+    import keyboard
 except:
     os.system("pip install customtkinter keyboard")
 
