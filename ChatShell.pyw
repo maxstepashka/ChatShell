@@ -1,9 +1,12 @@
 import os
 import random
 import webbrowser
-import keyboard
 import threading
-import customtkinter
+try:
+    import keyboard
+    import customtkinter
+except ImportError:
+    os.system("pip install customtkinter keyboard")
 
 
 customtkinter.set_appearance_mode("light")
