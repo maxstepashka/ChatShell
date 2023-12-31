@@ -114,6 +114,11 @@ def send():
         zapros = zapros.lower().replace("песню ", "")
         webbrowser.open("https://music.yandex.ru/search?text=" + zapros)
 
+
+
+    elif ".com" in com.lower() or ".ru" in com.lower() or ".info" in com.lower() or ".uk" in com.lower() or ".edu" in com.lower() or ".рф" in com.lower() or ".net" in com.lower() or ".cn" in com.lower() or ".ai" in com.lower() or ".org" in com.lower() or ".nl" in com.lower() or ".eu" in com.lower() or ".kids" in com.lower()  or ".legal" in com.lower() or ".page" in com.lower()  or ".dev" in com.lower()  or ".html" in com.lower():
+        webbrowser.open(com)
+
     elif com == "exit":
         quit()
 
